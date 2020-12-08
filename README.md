@@ -9,7 +9,11 @@ with the inclusion of namespaces as described in the [LazyLedger paper](https://
 
 ## Observations and Comparisons to rsmt2d and nmt
 
-- NCMT is significantly more restricted in the number of unique namespaces that can be included per block. Both are limited by the RS codec used, but due to rsmt2d square structure, it can include exponentially more.
+- NCMTs are significantly more restricted in the number of unique namespaces that can be included per block. Both are limited by the RS codec used, but due to rsmt2d square structure, it can include exponentially more.
 
+- Generating NMTs for rsmt2d, along with the data erasure process, are trivial to parallelize. Each layer of the CMT must be completed before moving to the next, which makes building the tree significantly less parallelizable. 
 
+## Implementation Details
+Due to inclusion of namespaces, the need to batch erasured nodes in a tree, I figured it would propbably just be faster to implement a cached tree rather than modify some existing library. 
 
+asfasdf
