@@ -9,7 +9,7 @@ with the inclusion of namespaces as described in the [LazyLedger paper](https://
 
 ## Observations and Comparisons to rsmt2d and nmt
 
-- NCMT is significantly more limited to the number of namespaces that can be included per block. Both are limited by the RS codec used, but due to rsmt2d square structure, it can include exponentially more.
+- NCMT is significantly more restricted in the number of unique namespaces that can be included per block. Both are limited by the RS codec used, but due to rsmt2d square structure, it can include exponentially more.
 
 
 
