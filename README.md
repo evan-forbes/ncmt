@@ -15,5 +15,3 @@ with the inclusion of namespaces as described in the [LazyLedger paper](https://
 
 ## Implementation Details
 Due to inclusion of namespaces, the need to batch erasured nodes in a tree, I figured it would propbably just be faster to implement a cached tree rather than modify some existing library. 
-
-asfasdf

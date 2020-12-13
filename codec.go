@@ -26,5 +26,5 @@ func (r RSFG8) Decode(input [][]byte) ([][]byte, error) {
 }
 
 func (r RSFG8) MaxChunks() int {
-	return 128 * 128
+	return 128
 }
