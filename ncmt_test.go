@@ -147,3 +147,20 @@ func powerInt(x, y int) int {
 	}
 	return out
 }
+
+func BenchmarkNCMTCreation(b *testing.B) {
+	mockData := mockData(128, 256)
+	for n := 0; n < b.N; n++ {
+		tree := NewNCMT()
+		for _, d := range mockData {
+			err := tree.Push(d)
+			if err != nil {
+				b.Error(err)
+			}
+		}
+		_, err := tree.Build()
+		if err != nil {
+			b.Fatal(err)
+		}
+	}
+}
