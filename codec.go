@@ -6,7 +6,7 @@ import "github.com/lazyledger/rsmt2d"
 type Codec interface {
 	Encode([][]byte) ([][]byte, error)
 	Decode([][]byte) ([][]byte, error)
-	MaxChunks() int
+	MaxLeaves() int
 }
 
 // RSFG8 uses the rsmt2d cached version of the infectious Reed-Solomon forward error
@@ -25,6 +25,6 @@ func (r RSFG8) Decode(input [][]byte) ([][]byte, error) {
 	return rsmt2d.Decode(input, rsmt2d.RSGF8)
 }
 
-func (r RSFG8) MaxChunks() int {
-	return 128 * 128
+func (r RSFG8) MaxLeaves() int {
+	return 128
 }
